@@ -1,6 +1,7 @@
 import { computed, ref } from "vue"
 import { collection, doc, deleteDoc } from "firebase/firestore"
-import { ref as storageRef, deleteObject } from "firebase/database"
+import { ref as storageRef } from "firebase/database"
+import { deleteObject } from "firebase/storage"
 import { useFirestore, useCollection, useFirebaseStorage } from "vuefire"
 
 export default function usePropiedades() {
