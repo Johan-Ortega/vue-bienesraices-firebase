@@ -1,7 +1,6 @@
 import { computed, ref } from "vue"
 import { collection, doc, deleteDoc } from "firebase/firestore"
-import { ref as storageRef } from "firebase/database"
-import { deleteObject } from "firebase/storage"
+import { ref as storageRef, deleteObject } from "firebase/storage"
 import { useFirestore, useCollection, useFirebaseStorage } from "vuefire"
 
 export default function usePropiedades() {
@@ -11,7 +10,7 @@ export default function usePropiedades() {
     const storage = useFirebaseStorage()
     const db = useFirestore()
     const propiedadesCollection = useCollection(collection(db, 'propiedades'))
-
+    
     async function deleteItem(id, urlImage) {
         if(confirm('¿Deseas eliminar esta propiedad?')){
             const docRef = doc(db, 'propiedades', id)
